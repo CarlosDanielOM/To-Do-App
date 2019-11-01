@@ -1,0 +1,208 @@
+/* Reset Values */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    font-size: 18px;
+    color: black;
+    overflow: hidden;
+}
+
+
+/* Container */
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+
+/* Card */
+
+.container .card {
+    width: 50%;
+    margin: 2% auto;
+}
+
+
+/* Card's header */
+
+.container .card .header {
+    width: 100%;
+    padding: 1%;
+    background: #2D728F;
+    border-radius: 15px 15px 0 0;
+}
+
+.container .card .header .title {
+    font-size: 800;
+    text-align: center;
+}
+
+.container .card .header form .add {
+    width: 90%;
+    margin: 1%;
+    padding: 3%;
+    background: none;
+    border: none;
+    font-size: 1.3em;
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: #F5EE9E;
+}
+
+.container .card .header form .add::placeholder {
+    color: #F49E4C;
+    text-decoration: underline;
+}
+
+
+/* Card's body */
+
+.container .card .body {
+    width: 100%;
+    max-height: 500px;
+    overflow: auto;
+    background: #3B8EA5;
+    padding-bottom: 15px;
+    border-radius: 0 0 15px 15px;
+}
+
+
+/* Body scrollbar */
+
+.container .card .body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.container .card .body::-webkit-scrollbar-track {
+    border-radius: 10px;
+    box-shadow: 0 0 #000;
+}
+
+.container .card .body::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 15px;
+}
+
+
+/* To-Do */
+
+.container .card .body .to-do {
+    display: grid;
+    grid-template-columns: 10% 70% 20%;
+    grid-template-areas: "select content actions";
+    border-bottom: 1px solid #000;
+    padding: 3%;
+}
+
+
+/* To-Do select */
+
+.container .card .body .to-do .select {
+    grid-area: select;
+    position: relative;
+}
+
+.container .card .body .to-do .select .circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #000;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+
+/* To-Do content */
+
+.container .card .body .to-do .content {
+    grid-area: content;
+}
+
+.container .card .body .to-do .content .text {
+    font-size: 1.1em;
+    color: #55DDE0;
+}
+
+
+/* To-Do actions */
+
+.container .card .body .to-do .actions {
+    grid-area: actions;
+    padding-top: 5px;
+}
+
+.container .card .body .to-do .actions .btn {
+    width: 45%;
+    height: 40px;
+    font-size: .9em;
+    text-align: center;
+    background: none;
+    border: none;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.container .card .body .to-do .actions .btn-delete {
+    background: #F25F5C;
+}
+
+.container .card .body .to-do .actions .btn-edit {
+    background: #3BCEAC;
+}
+
+
+/* Completed To-Do */
+
+.container .card .body .completed .select .circle {
+    background: #000;
+}
+
+.container .card .body .completed .content .text {
+    text-decoration: line-through;
+}
+
+
+/* Alert */
+
+.alert {
+    opacity: 0;
+    position: fixed;
+    right: 10px;
+    top: 50px;
+    width: 350px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 1%;
+    transition: .5s all ease-in-out;
+}
+
+.alert .msg {
+    text-align: left;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 600;
+}
+
+.alert.alert-success {
+    background: #0EAD69;
+}
+
+.alert.alert-warning {
+    background: #E3170A;
+}
+
+.alert.alert-info {
+    background: #2E86AB;
+}
